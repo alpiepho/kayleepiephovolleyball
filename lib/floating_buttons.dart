@@ -5,18 +5,18 @@ class FloatingButtons extends StatelessWidget {
     Key? key,
     required this.screenHeight,
     required this.screenWidth,
-    required this.onPreviousItem,
-    required this.onNextItem,
-    required this.onTogglePause,
-    required this.onHelp,
+    required this.onDetails,
+    required this.onStats,
+    required this.onContact,
+    required this.onCode,
   }) : super(key: key);
 
   final double screenHeight;
   final double screenWidth;
-  final Function? onPreviousItem;
-  final Function? onNextItem;
-  final Function? onTogglePause;
-  final Function? onHelp;
+  final Function? onDetails;
+  final Function? onStats;
+  final Function? onContact;
+  final Function? onCode;
 
   @override
   Widget build(BuildContext context) {
@@ -27,10 +27,10 @@ class FloatingButtons extends StatelessWidget {
           top: 100,
           right: 30,
           child: FloatingActionButton(
-            heroTag: 'back',
-            onPressed: onPreviousItem as Function()?,
+            heroTag: 'details',
+            onPressed: onDetails as Function()?,
             child: const Icon(
-              Icons.arrow_left,
+              Icons.article_outlined,
               size: 40,
             ),
           ),
@@ -39,10 +39,10 @@ class FloatingButtons extends StatelessWidget {
           top: 200,
           right: 30,
           child: FloatingActionButton(
-            heroTag: 'next',
-            onPressed: onNextItem as Function()?,
+            heroTag: 'stats',
+            onPressed: onStats as Function()?,
             child: const Icon(
-              Icons.arrow_right,
+              Icons.align_vertical_bottom,
               size: 40,
             ),
           ),
@@ -51,22 +51,22 @@ class FloatingButtons extends StatelessWidget {
           top: 300,
           right: 30,
           child: FloatingActionButton(
-            heroTag: 'pause',
-            onPressed: onTogglePause as Function()?,
+            heroTag: 'contact',
+            onPressed: onContact as Function()?,
             child: const Icon(
-              Icons.pause,
+              Icons.email,
               size: 40,
             ),
           ),
         ),
         Positioned(
-          top: 400,
+          bottom: 40,
           right: 30,
           child: FloatingActionButton(
-            heroTag: 'settings',
-            onPressed: onHelp as Function()?,
+            heroTag: 'Github',
+            onPressed: onCode as Function()?,
             child: const Icon(
-              Icons.add,
+              Icons.code,
               size: 40,
             ),
           ),

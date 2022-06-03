@@ -11,12 +11,12 @@ A new Flutter web project and site for a College Volleyball Recruiting website.
 - [ ] another gmail?
 - [ ] start with simple column (name, position, year, email)
 - [ ] test taking it down
-- [ ] review cojo player site (add refs)
-- [ ] copy constants (from kt_photo?, scores? other?)
-- [ ] positioned with colored blocks
+- [x] review cojo player site (add refs)
+- [x] copy constants (from kt_photo?, scores? other?)
+- [x] positioned with colored blocks
 - [ ] positioned with images from assets
-- [ ] images - blured background volleyball/court
-- [ ] images - screenshots of hudl
+- [x] images - blured background volleyball/court
+- [x] images - screenshots of hudl
 - [ ] images - jump set
 - [ ] images - dump?
 - [ ] images - serve?

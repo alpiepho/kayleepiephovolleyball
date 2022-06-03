@@ -1,7 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import 'constants.dart';
 import 'floating_buttons.dart';
@@ -16,11 +14,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Kaylee Piepho Volleyball',
+      title: 'Kaylee Piepho',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const MyHomePage(title: 'Kaylee Piepho Volleyball'),
+      home: const MyHomePage(title: 'Kaylee Piepho Volleyball 2022'),
     );
   }
 }
@@ -36,7 +34,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  List<String> _assetImagePaths = [''];
 
   void _incrementCounter() {
     setState(() {
@@ -44,25 +41,115 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
-  Future _parseAssetImages() async {
-    final manifestContent = await rootBundle.loadString('AssetManifest.json');
-    final Map<String, dynamic> manifestMap = json.decode(manifestContent);
+  Future<void> _onDetails() async {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      constraints: BoxConstraints(
+        maxWidth: width * 0.9,
+        minWidth: width * 0.9,
+        //maxHeight: height * 0.9,
+        minHeight: height * 0.9,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      builder: (context) {
+        return SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Kaylee Piepho',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Setter',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+              Text(
+                'Class of 2025',
+                style: kLabelTextStyle_system,
+              ),
+            ],
+          ),
+        );
+      },
+    );
+  }
 
-    final imagePaths = manifestMap.keys
-        .where((String key) => key.contains('/'))
-        .where((String key) => key.contains('.jpg'))
-        .toList();
-
-    setState(() {
-      _assetImagePaths = imagePaths;
-    });
-    // ignore: avoid_print
-    print('_assetImagePaths.length: ' + _assetImagePaths.length.toString());
+  Future<void> _onCode() async {
+    await launch(
+        'https://github.com/alpiepho/kayleepiephovolleyball/blob/master/README.md');
+    //Navigator.of(context).pop();
   }
 
   @override
   void initState() {
-    _parseAssetImages();
+    //_parseAssetImages();
     super.initState();
   }
 
@@ -84,8 +171,8 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               // Background
               Positioned(
-                top: 0,
-                left: 0,
+                top: -200,
+                left: -100,
                 child: SizedBox(
                   width: width,
                   height: height,
@@ -98,7 +185,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              // Backset image
+              // Yellow
+              const Positioned(
+                top: 20, // TODO: base on w/h
+                left: 20, // TODO: base on w/h
+                child: SizedBox(
+                  width: 200, // TODO: base on w/h
+                  height: 300, // TODO: base on w/h
+                  child: Opacity(
+                    opacity: 0.5,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.yellow,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Blue
               const Positioned(
                 top: 200, // TODO: base on w/h
                 left: 20, // TODO: base on w/h
@@ -116,9 +221,9 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              // Huddle image 1
+              // Red
               const Positioned(
-                top: 500, // TODO: base on w/h
+                top: 300, // TODO: base on w/h
                 left: 500, // TODO: base on w/h
                 child: SizedBox(
                   width: 600, // TODO: base on w/h
@@ -134,11 +239,77 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              // Huddle image 1
-              // Huddle image 2
-              // Backset image
-              // Dig image
-              // Serve image
+              // Orange
+              const Positioned(
+                top: 700, // TODO: base on w/h
+                left: 40, // TODO: base on w/h
+                child: SizedBox(
+                  width: 600, // TODO: base on w/h
+                  height: 500, // TODO: base on w/h
+                  child: Opacity(
+                    opacity: 0.5,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.orange,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Purple
+              const Positioned(
+                top: 700, // TODO: base on w/h
+                right: 40, // TODO: base on w/h
+                child: SizedBox(
+                  width: 600, // TODO: base on w/h
+                  height: 500, // TODO: base on w/h
+                  child: Opacity(
+                    opacity: 0.5,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.purple,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Green
+              const Positioned(
+                top: 1000, // TODO: base on w/h
+                right: 40, // TODO: base on w/h
+                child: SizedBox(
+                  width: 600, // TODO: base on w/h
+                  height: 500, // TODO: base on w/h
+                  child: Opacity(
+                    opacity: 0.5,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.green,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+
+              // Pink
+              const Positioned(
+                top: 1200, // TODO: base on w/h
+                left: 40, // TODO: base on w/h
+                child: SizedBox(
+                  width: 600, // TODO: base on w/h
+                  height: 500, // TODO: base on w/h
+                  child: Opacity(
+                    opacity: 0.5,
+                    child: DecoratedBox(
+                      decoration: BoxDecoration(
+                        color: Colors.pink,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
 
               // Hero box
               Positioned(
@@ -202,10 +373,10 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingButtons(
         screenHeight: height,
         screenWidth: width,
-        onPreviousItem: _incrementCounter,
-        onNextItem: _incrementCounter,
-        onTogglePause: _incrementCounter,
-        onHelp: _incrementCounter,
+        onDetails: _onDetails,
+        onStats: _incrementCounter,
+        onContact: _incrementCounter,
+        onCode: _onCode,
       ),
     );
   }
