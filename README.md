@@ -29,11 +29,14 @@ or QR Code:
 - [x] qr
 - [x] readme
 
-- [ ] responsive position and column for mobile
-- [ ] finish details with fonts
-- [ ] done button on details
-- [ ] stats modal with images of hudl
-- [ ] email link
+- [-] responsive position and column for mobile
+- [x] finish details with fonts
+- [-] done button on details
+- [x] stats modal with images of hudl
+- [x] email link
+- [ ] make details printable
+- [ ] all text select on details page
+- [ ] phone links?
 
 - [ ] positioned with images from assets
 - [ ] images - jump set

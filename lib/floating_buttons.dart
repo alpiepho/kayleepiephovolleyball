@@ -22,11 +22,12 @@ class FloatingButtons extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var portrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Stack(
       fit: StackFit.expand,
       children: [
         Positioned(
-          top: 100,
+          top: portrait ? 100 : 75,
           right: 30,
           child: FloatingActionButton(
             heroTag: 'details',
@@ -38,7 +39,7 @@ class FloatingButtons extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 200,
+          top: portrait ? 200 : 150,
           right: 30,
           child: FloatingActionButton(
             heroTag: 'stats',
@@ -50,7 +51,7 @@ class FloatingButtons extends StatelessWidget {
           ),
         ),
         Positioned(
-          top: 300,
+          top: portrait ? 300 : 225,
           right: 30,
           child: FloatingActionButton(
             heroTag: 'video',
@@ -62,7 +63,7 @@ class FloatingButtons extends StatelessWidget {
           ),
         ),
         // Positioned(
-        //   top: 400,
+        //   top: portrait ? 400 : 300,
         //   right: 30,
         //   child: FloatingActionButton(
         //     heroTag: 'contact',
@@ -74,7 +75,7 @@ class FloatingButtons extends StatelessWidget {
         //   ),
         // ),
         Positioned(
-          bottom: 40,
+          bottom: portrait ? 40 : 20,
           right: 30,
           child: FloatingActionButton(
             heroTag: 'Github',

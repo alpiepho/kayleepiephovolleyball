@@ -70,72 +70,192 @@ class _MyHomePageState extends State<MyHomePage> {
                 '',
                 style: kLabelTextStyleSystem30,
               ),
-              //
-              // GPA
-              // PSAT9 1270 (720/720 on Math)
-              // parents
-              // height
-              // wieght
-              // stand jump
-              // approach jump
-              // awards
-              // clubs
-              // high school
-              // coaches
-              // recruit contacts
-              // goals
-              // workouts?
-
               Text(
-                '.',
+                'GPA: 3.9',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                'PSAT9: 1270',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                '(720/720 on Math)',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                '',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                'Height: 5 \'7"',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                'Weight: 120lb',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                'Standing Jump: 9 \'1"',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                'Approach Jump: 9 \'2"',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                '',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                'Coaches/Recruit Contacts:',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                '',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                '- Micheal Roble - Rocky Elite Director/Coach - nnn-nnn-nnnn',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '.',
+                '- Nicole Burton - Fossil Ridge HS Coach - nnn-nnn-nnnn',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                'Clubs:',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '2022 - Rocky Elite 15 National',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- 2nd in Colorado',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- Playing in AAU, ??? Division',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- Bid to USAV Nationals, 15 National Division',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '2021 - Rocky Select 14 National',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '2020 - Rocky Select 13 National',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '2019 - Rocky Select 12 National',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '2019 - NORCO 11U',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '2018 - Club One 12U',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                'School:',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '2021 - Fossil Ridge High School, 9th:',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- setter, JV team',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '2019 - Preston Middle School, 7th',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- setter, ran 5-1.',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- undefeated, never lost a set.',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                'Goals:',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- [x] Keep near 4.0 GPA',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- [x] Win bit to Nationals',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- [ ] Make High School State',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '- [ ] Win High School State',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                ' - [ ] Find great College',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                ' - [ ] Earn Scholarship for Volleyball',
+                style: kLabelTextStyleSystem30,
+              ),
+              Text(
+                '',
                 style: kLabelTextStyleSystem30,
               ),
             ],
@@ -282,7 +402,23 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              // Yellow
+              // Yellow - image
+              const Positioned(
+                top: 20,
+                left: 20,
+                child: SizedBox(
+                  width: 200,
+                  height: 300,
+                  child: Opacity(
+                    opacity: 0.5,
+                    child: Image(
+                        image: AssetImage('assets/PlayServe1.png'),
+                        fit: BoxFit.cover),
+                  ),
+                ),
+              ),
+
+              // Yellow - color
               const Positioned(
                 top: 20,
                 left: 20,
@@ -354,13 +490,29 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              // Purple
+              // Purple - text screenshot
               const Positioned(
                 top: 700,
                 right: 40,
                 child: SizedBox(
-                  width: 600,
-                  height: 500,
+                  width: 300,
+                  height: 600,
+                  child: Opacity(
+                    opacity: 1.0,
+                    child: Image(
+                        image: AssetImage('assets/TextServeRun.png'),
+                        fit: BoxFit.cover),
+                  ),
+                ),
+              ),
+
+              // Purple - color
+              const Positioned(
+                top: 700,
+                right: 40,
+                child: SizedBox(
+                  width: 300,
+                  height: 600,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
