@@ -7,6 +7,7 @@ class FloatingButtons extends StatelessWidget {
     required this.screenWidth,
     required this.onDetails,
     required this.onStats,
+    required this.onVideo,
     required this.onContact,
     required this.onCode,
   }) : super(key: key);
@@ -15,6 +16,7 @@ class FloatingButtons extends StatelessWidget {
   final double screenWidth;
   final Function? onDetails;
   final Function? onStats;
+  final Function? onVideo;
   final Function? onContact;
   final Function? onCode;
 
@@ -51,14 +53,26 @@ class FloatingButtons extends StatelessWidget {
           top: 300,
           right: 30,
           child: FloatingActionButton(
-            heroTag: 'contact',
-            onPressed: onContact as Function()?,
+            heroTag: 'video',
+            onPressed: onVideo as Function()?,
             child: const Icon(
-              Icons.email,
+              Icons.video_camera_back,
               size: 40,
             ),
           ),
         ),
+        // Positioned(
+        //   top: 400,
+        //   right: 30,
+        //   child: FloatingActionButton(
+        //     heroTag: 'contact',
+        //     onPressed: onContact as Function()?,
+        //     child: const Icon(
+        //       Icons.email,
+        //       size: 40,
+        //     ),
+        //   ),
+        // ),
         Positioned(
           bottom: 40,
           right: 30,

@@ -2,28 +2,50 @@
 
 A new Flutter web project and site for a College Volleyball Recruiting website.
 
+## Get Application
+Version: 2.0
+
+GH-Pages site: https://alpiepho.github.io/kayleepiephovolleyball/
+
+or QR Code:
+
+![QR Code](./qr-code.png)
+
+
 ## TODO
 
 - [x] start README
 - [x] get main from kt_photo
 - [x] get assets from show_photo
 - [x] change titles etc
-- [ ] another gmail?
-- [ ] start with simple column (name, position, year, email)
-- [ ] test taking it down
 - [x] review cojo player site (add refs)
 - [x] copy constants (from kt_photo?, scores? other?)
 - [x] positioned with colored blocks
-- [ ] positioned with images from assets
 - [x] images - blured background volleyball/court
 - [x] images - screenshots of hudl
+
+- [x] run peanut
+- [x] icon
+- [x] qr
+- [x] readme
+
+- [ ] responsive position and column for mobile
+- [ ] finish details with fonts
+- [ ] done button on details
+- [ ] stats modal with images of hudl
+- [ ] email link
+
+- [ ] positioned with images from assets
 - [ ] images - jump set
 - [ ] images - dump?
 - [ ] images - serve?
 - [ ] images - block?
 - [ ] links - details (printable?) won't be as much as reference
-- [ ] links - hudl?
+- [ ] links - hudl? (https://www.hudl.com/profile/17226029/Kaylee-Piepho)
 - [ ] links - video on google?
+
+- [ ] another gmail?
+- [ ] test taking it down
 - [ ] TBD
 
 

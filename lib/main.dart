@@ -33,14 +33,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
   Future<void> _onDetails() async {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
@@ -50,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
       constraints: BoxConstraints(
         maxWidth: width * 0.9,
         minWidth: width * 0.9,
-        //maxHeight: height * 0.9,
+        maxHeight: height * 0.95,
         minHeight: height * 0.9,
       ),
       shape: RoundedRectangleBorder(
@@ -64,81 +56,184 @@ class _MyHomePageState extends State<MyHomePage> {
             children: [
               Text(
                 'Kaylee Piepho',
-                style: kLabelTextStyle_system,
+                style: kLabelTextStyleSystem50,
               ),
               Text(
                 'Setter',
-                style: kLabelTextStyle_system,
+                style: kLabelTextStyleSystem50,
               ),
               Text(
                 'Class of 2025',
-                style: kLabelTextStyle_system,
+                style: kLabelTextStyleSystem50,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '',
+                style: kLabelTextStyleSystem30,
+              ),
+              //
+              // GPA
+              // PSAT9 1270 (720/720 on Math)
+              // parents
+              // height
+              // wieght
+              // stand jump
+              // approach jump
+              // awards
+              // clubs
+              // high school
+              // coaches
+              // recruit contacts
+              // goals
+              // workouts?
+
+              Text(
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
-              ),
-              Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
-              ),
-              Text(
-                'Class of 2025',
-                style: kLabelTextStyle_system,
+                '.',
+                style: kLabelTextStyleSystem30,
               ),
             ],
           ),
         );
       },
     );
+  }
+
+  Future<void> _onStats() async {
+    double width = MediaQuery.of(context).size.width;
+    double height = MediaQuery.of(context).size.height;
+    showModalBottomSheet(
+      isScrollControlled: true,
+      context: context,
+      constraints: BoxConstraints(
+        maxWidth: width * 0.9,
+        minWidth: width * 0.9,
+        maxHeight: height * 0.95,
+        minHeight: height * 0.9,
+      ),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(10.0),
+      ),
+      builder: (context) {
+        return SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                'Hudl 2022',
+                style: kLabelTextStyleSystem50,
+              ),
+              const Divider(height: 10.0),
+              Text(
+                'Serving',
+                style: kLabelTextStyleSystem50,
+              ),
+              SizedBox(
+                width: width * 0.9,
+                child: const Image(
+                    image: AssetImage('assets/StatsServing.png'),
+                    fit: BoxFit.cover),
+              ),
+              const Divider(height: 10.0),
+              Text(
+                'Hitting',
+                style: kLabelTextStyleSystem50,
+              ),
+              SizedBox(
+                width: width * 0.9,
+                child: const Image(
+                    image: AssetImage('assets/StatsHitting.png'),
+                    fit: BoxFit.cover),
+              ),
+              const Divider(height: 10.0),
+              Text(
+                'Digs',
+                style: kLabelTextStyleSystem50,
+              ),
+              SizedBox(
+                width: width * 0.9,
+                child: const Image(
+                    image: AssetImage('assets/StatsDigs.png'),
+                    fit: BoxFit.cover),
+              ),
+              const Divider(height: 10.0),
+              Text(
+                'Blocks',
+                style: kLabelTextStyleSystem50,
+              ),
+              SizedBox(
+                width: width * 0.9,
+                child: const Image(
+                    image: AssetImage('assets/StatsBlocks.png'),
+                    fit: BoxFit.cover),
+              ),
+              Text(
+                '___',
+                style: kLabelTextStyleSystem50,
+              ),
+              const SizedBox(height: 100),
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  Future<void> _onVideo() async {
+    await launch('https://www.hudl.com/profile/17226029/Kaylee-Piepho');
+    //Navigator.of(context).pop();
+  }
+
+  Future<void> _onMail() async {
+    await launch('mailto:kelleenpiepho@gmail.com');
+    //Navigator.of(context).pop();
   }
 
   Future<void> _onCode() async {
@@ -159,6 +254,8 @@ class _MyHomePageState extends State<MyHomePage> {
     double height = MediaQuery.of(context).size.height;
     //var portrait = MediaQuery.of(context).orientation == Orientation.portrait;
 
+    // NOTE: was going adjust Positioned widgets based on media size, but
+    // I like the abstract look on small screen.
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
@@ -187,11 +284,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // Yellow
               const Positioned(
-                top: 20, // TODO: base on w/h
-                left: 20, // TODO: base on w/h
+                top: 20,
+                left: 20,
                 child: SizedBox(
-                  width: 200, // TODO: base on w/h
-                  height: 300, // TODO: base on w/h
+                  width: 200,
+                  height: 300,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
@@ -205,11 +302,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // Blue
               const Positioned(
-                top: 200, // TODO: base on w/h
-                left: 20, // TODO: base on w/h
+                top: 200,
+                left: 20,
                 child: SizedBox(
-                  width: 600, // TODO: base on w/h
-                  height: 500, // TODO: base on w/h
+                  width: 600,
+                  height: 500,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
@@ -223,11 +320,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // Red
               const Positioned(
-                top: 300, // TODO: base on w/h
-                left: 500, // TODO: base on w/h
+                top: 300,
+                left: 500,
                 child: SizedBox(
-                  width: 600, // TODO: base on w/h
-                  height: 500, // TODO: base on w/h
+                  width: 600,
+                  height: 500,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
@@ -241,11 +338,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // Orange
               const Positioned(
-                top: 700, // TODO: base on w/h
-                left: 40, // TODO: base on w/h
+                top: 700,
+                left: 40,
                 child: SizedBox(
-                  width: 600, // TODO: base on w/h
-                  height: 500, // TODO: base on w/h
+                  width: 600,
+                  height: 500,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
@@ -259,11 +356,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // Purple
               const Positioned(
-                top: 700, // TODO: base on w/h
-                right: 40, // TODO: base on w/h
+                top: 700,
+                right: 40,
                 child: SizedBox(
-                  width: 600, // TODO: base on w/h
-                  height: 500, // TODO: base on w/h
+                  width: 600,
+                  height: 500,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
@@ -277,11 +374,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // Green
               const Positioned(
-                top: 1000, // TODO: base on w/h
-                right: 40, // TODO: base on w/h
+                top: 1000,
+                right: 40,
                 child: SizedBox(
-                  width: 600, // TODO: base on w/h
-                  height: 500, // TODO: base on w/h
+                  width: 600,
+                  height: 500,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
@@ -295,11 +392,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // Pink
               const Positioned(
-                top: 1200, // TODO: base on w/h
-                left: 40, // TODO: base on w/h
+                top: 1200,
+                left: 40,
                 child: SizedBox(
-                  width: 600, // TODO: base on w/h
-                  height: 500, // TODO: base on w/h
+                  width: 600,
+                  height: 500,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
@@ -313,11 +410,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
               // Hero box
               Positioned(
-                top: 50, // TODO: base on w/h
-                right: 70, // TODO: base on w/h
+                top: width < 500 ? 60 : 50,
+                right: width < 500 ? -60 : 70,
                 child: SizedBox(
-                  width: 600, // TODO: base on w/h
-                  height: 300, // TODO: base on w/h
+                  width: 600,
+                  height: 300,
                   child: Opacity(
                     opacity: 0.5,
                     child: DecoratedBox(
@@ -328,40 +425,18 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Text(
                               'Kaylee Piepho',
-                              style: kLabelTextStyle_system,
+                              style: kLabelTextStyleSystem50,
                             ),
                             Text(
                               'Setter',
-                              style: kLabelTextStyle_system,
+                              style: kLabelTextStyleSystem50,
                             ),
                             Text(
                               'Class of 2025',
-                              style: kLabelTextStyle_system,
+                              style: kLabelTextStyleSystem50,
                             ),
                           ],
                         )),
-                  ),
-                ),
-              ),
-
-              // Original counter
-              Positioned(
-                top: 200,
-                right: 10,
-                width: 200,
-                height: 400,
-                child: Center(
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      const Text(
-                        'You have pushed the button this many times:',
-                      ),
-                      Text(
-                        '$_counter',
-                        style: Theme.of(context).textTheme.headline4,
-                      ),
-                    ],
                   ),
                 ),
               ),
@@ -374,8 +449,9 @@ class _MyHomePageState extends State<MyHomePage> {
         screenHeight: height,
         screenWidth: width,
         onDetails: _onDetails,
-        onStats: _incrementCounter,
-        onContact: _incrementCounter,
+        onStats: _onStats,
+        onVideo: _onVideo,
+        onContact: _onMail,
         onCode: _onCode,
       ),
     );
