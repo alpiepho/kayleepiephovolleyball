@@ -4,9 +4,9 @@ const TEMP = 'flutter-temp-cache';
 const CACHE_NAME = 'flutter-app-cache';
 const RESOURCES = {
   "version.json": "eace3f9f375fff1dbc2c6460924caf0d",
-"index.html": "07a422c3a0d8495c882613a21d958873",
-"/": "07a422c3a0d8495c882613a21d958873",
-"main.dart.js": "c0e9fa35a06665c21eb9b98849310b30",
+"index.html": "51869ddb3ce8e8bc8b521567e093bd87",
+"/": "51869ddb3ce8e8bc8b521567e093bd87",
+"main.dart.js": "36219f2a146fb510921d9fb21bf4e265",
 "flutter.js": "0816e65a103ba8ba51b174eeeeb2cb67",
 "favicon.png": "5e4af6677f3608a489cdd4ca9a3b6c0a",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
@@ -37,11 +37,11 @@ const RESOURCES = {
 // The application shell files that are downloaded before a service worker can
 // start.
 const CORE = [
-  "https://alpiepho.github.io/kayleepiephovolleyball/main.dart.js",
-"https://alpiepho.github.io/kayleepiephovolleyball/index.html",
-"https://alpiepho.github.io/kayleepiephovolleyball/assets/NOTICES",
-"https://alpiepho.github.io/kayleepiephovolleyball/assets/AssetManifest.json",
-"https://alpiepho.github.io/kayleepiephovolleyball/assets/FontManifest.json"];
+  "main.dart.js",
+"index.html",
+"assets/NOTICES",
+"assets/AssetManifest.json",
+"assets/FontManifest.json"];
 // During install, the TEMP cache is populated with the application shell files.
 self.addEventListener("install", (event) => {
   self.skipWaiting();
