@@ -36,6 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Future<void> _onDetails() async {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
+
     showModalBottomSheet(
       isScrollControlled: true,
       context: context,
@@ -52,9 +53,21 @@ class _MyHomePageState extends State<MyHomePage> {
         return SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: width < 500
+                ? CrossAxisAlignment.start
+                : CrossAxisAlignment.center,
             children: [
-              Text(
+              // const SelectableText.rich(
+              //   TextSpan(
+              //     text: 'Kaylee Piepho',
+              //     children: [
+              //       TextSpan(text: 'Setter'),
+              //       TextSpan(text: 'Class 2025'),
+              //     ],
+              //     //style: kLabelTextStyleSystem50,
+              //   ),
+              // ),
+              SelectableText(
                 'Kaylee Piepho',
                 style: kLabelTextStyleSystem50,
               ),
@@ -87,11 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Height: 5 \'7"',
+                'Height: 5 \'8"',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Weight: 120lb',
+                'Weight: 130lb',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
@@ -114,12 +127,12 @@ class _MyHomePageState extends State<MyHomePage> {
                 '',
                 style: kLabelTextStyleSystem30,
               ),
-              Text(
-                '- Micheal Roble - Rocky Elite Director/Coach - nnn-nnn-nnnn',
+              SelectableText(
+                '- Micheal Roble - Rocky Elite Director/Coach - 720-937-3850',
                 style: kLabelTextStyleSystem30,
               ),
-              Text(
-                '- Nicole Burton - Fossil Ridge HS Coach - nnn-nnn-nnnn',
+              SelectableText(
+                '- Nicole Burton - Fossil Ridge HS Coach - 818-688-1148',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
@@ -143,11 +156,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '- Playing in AAU, ??? Division',
+                '- AAU Premier Division, 1st in Diamond Bracket',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '- Bid to USAV Nationals, 15 National Division',
+                '- Bid to USAV Nationals, 15-National Division',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
@@ -171,15 +184,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                '2019 - Rocky Select 12 National',
-                style: kLabelTextStyleSystem30,
-              ),
-              Text(
-                '',
-                style: kLabelTextStyleSystem30,
-              ),
-              Text(
-                '2019 - NORCO 11U',
+                '2019 - NORCO 12U',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
@@ -297,9 +302,13 @@ class _MyHomePageState extends State<MyHomePage> {
               ),
               SizedBox(
                 width: width * 0.9,
-                child: const Image(
-                    image: AssetImage('assets/StatsServing.png'),
-                    fit: BoxFit.cover),
+                child: InteractiveViewer(
+                  scaleEnabled: width < 500 ? true : false,
+                  panEnabled: width < 500 ? true : false,
+                  child: const Image(
+                      image: AssetImage('assets/StatsServing.png'),
+                      fit: BoxFit.cover),
+                ),
               ),
               const Divider(height: 10.0),
               Text(
@@ -347,16 +356,19 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> _onVideo() async {
+    // ignore: deprecated_member_use
     await launch('https://www.hudl.com/profile/17226029/Kaylee-Piepho');
     //Navigator.of(context).pop();
   }
 
   Future<void> _onMail() async {
+    // ignore: deprecated_member_use
     await launch('mailto:kelleenpiepho@gmail.com');
     //Navigator.of(context).pop();
   }
 
   Future<void> _onCode() async {
+    // ignore: deprecated_member_use
     await launch(
         'https://github.com/alpiepho/kayleepiephovolleyball/blob/master/README.md');
     //Navigator.of(context).pop();
@@ -378,9 +390,9 @@ class _MyHomePageState extends State<MyHomePage> {
     // I like the abstract look on small screen.
     return Scaffold(
       backgroundColor: Colors.grey,
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
+      // appBar: AppBar(
+      //   title: Text(widget.title),
+      // ),
       body: SingleChildScrollView(
         child: SizedBox(
           height: 2000,
@@ -410,7 +422,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 200,
                   height: 300,
                   child: Opacity(
-                    opacity: 0.5,
+                    opacity: 1.0,
                     child: Image(
                         image: AssetImage('assets/PlayServe1.png'),
                         fit: BoxFit.cover),
@@ -418,25 +430,25 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              // Yellow - color
-              const Positioned(
-                top: 20,
-                left: 20,
-                child: SizedBox(
-                  width: 200,
-                  height: 300,
-                  child: Opacity(
-                    opacity: 0.5,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.yellow,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // // Yellow
+              // const Positioned(
+              //   top: 20,
+              //   left: 20,
+              //   child: SizedBox(
+              //     width: 200,
+              //     height: 300,
+              //     child: Opacity(
+              //       opacity: 0.5,
+              //       child: DecoratedBox(
+              //         decoration: BoxDecoration(
+              //           color: Colors.yellow,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
 
-              // Blue
+              // Blue - image
               const Positioned(
                 top: 200,
                 left: 20,
@@ -444,56 +456,104 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 600,
                   height: 500,
                   child: Opacity(
-                    opacity: 0.5,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                      ),
-                    ),
+                    opacity: 1.0,
+                    child: Image(
+                        image: AssetImage('assets/PlayBlock2.jpg'),
+                        fit: BoxFit.cover),
                   ),
                 ),
               ),
 
-              // Red
+              // // Blue
+              // const Positioned(
+              //   top: 200,
+              //   left: 20,
+              //   child: SizedBox(
+              //     width: 600,
+              //     height: 500,
+              //     child: Opacity(
+              //       opacity: 0.5,
+              //       child: DecoratedBox(
+              //         decoration: BoxDecoration(
+              //           color: Colors.blue,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
+              // Red - image
               const Positioned(
                 top: 300,
-                left: 500,
+                left: 600,
                 child: SizedBox(
                   width: 600,
                   height: 500,
                   child: Opacity(
-                    opacity: 0.5,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.red,
-                      ),
-                    ),
+                    opacity: 1.0,
+                    child: Image(
+                        image: AssetImage('assets/StatsServing.png'),
+                        fit: BoxFit.cover),
                   ),
                 ),
               ),
 
-              // Orange
+              // // Red
+              // const Positioned(
+              //   top: 300,
+              //   left: 600,
+              //   child: SizedBox(
+              //     width: 600,
+              //     height: 500,
+              //     child: Opacity(
+              //       opacity: 0.5,
+              //       child: DecoratedBox(
+              //         decoration: BoxDecoration(
+              //           color: Colors.red,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
+              // Orange - image
               const Positioned(
                 top: 700,
-                left: 40,
+                left: 100,
                 child: SizedBox(
                   width: 600,
                   height: 500,
                   child: Opacity(
-                    opacity: 0.5,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.orange,
-                      ),
-                    ),
+                    opacity: 1.0,
+                    child: Image(
+                        image: AssetImage('assets/PlayDump.jpg'),
+                        fit: BoxFit.fitHeight),
                   ),
                 ),
               ),
 
-              // Purple - text screenshot
+              // // Orange
+              // const Positioned(
+              //   top: 700,
+              //   left: 100,
+              //   child: SizedBox(
+              //     width: 600,
+              //     height: 500,
+              //     child: Opacity(
+              //       opacity: 0.5,
+              //       child: DecoratedBox(
+              //         decoration: BoxDecoration(
+              //           color: Colors.orange,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
+              // Purple - image
               const Positioned(
                 top: 700,
-                right: 40,
+                right: 180,
                 child: SizedBox(
                   width: 300,
                   height: 600,
@@ -506,59 +566,91 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
 
-              // Purple - color
-              const Positioned(
-                top: 700,
-                right: 40,
-                child: SizedBox(
-                  width: 300,
-                  height: 600,
-                  child: Opacity(
-                    opacity: 0.5,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.purple,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
+              // // Purple
+              // const Positioned(
+              //   top: 700,
+              //   right: 180,
+              //   child: SizedBox(
+              //     width: 300,
+              //     height: 600,
+              //     child: Opacity(
+              //       opacity: 0.5,
+              //       child: DecoratedBox(
+              //         decoration: BoxDecoration(
+              //           color: Colors.purple,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
 
-              // Green
+              // Green - image
               const Positioned(
                 top: 1000,
-                right: 40,
+                right: 80,
                 child: SizedBox(
                   width: 600,
                   height: 500,
                   child: Opacity(
-                    opacity: 0.5,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.green,
-                      ),
-                    ),
+                    opacity: 1.0,
+                    child: Image(
+                        image: AssetImage('assets/PlayBlock1.jpg'),
+                        fit: BoxFit.cover),
                   ),
                 ),
               ),
 
-              // Pink
+              // // Green
+              // const Positioned(
+              //   top: 1000,
+              //   right: 80,
+              //   child: SizedBox(
+              //     width: 600,
+              //     height: 500,
+              //     child: Opacity(
+              //       opacity: 0.5,
+              //       child: DecoratedBox(
+              //         decoration: BoxDecoration(
+              //           color: Colors.green,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
+
+              // Pink - image
               const Positioned(
-                top: 1200,
+                top: 1400,
                 left: 40,
                 child: SizedBox(
                   width: 600,
                   height: 500,
                   child: Opacity(
-                    opacity: 0.5,
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: Colors.pink,
-                      ),
-                    ),
+                    opacity: 1.0,
+                    child: Image(
+                        image: AssetImage('assets/StatsHitting.png'),
+                        fit: BoxFit.cover),
                   ),
                 ),
               ),
+
+              // // Pink
+              // const Positioned(
+              //   top: 1400,
+              //   left: 40,
+              //   child: SizedBox(
+              //     width: 600,
+              //     height: 500,
+              //     child: Opacity(
+              //       opacity: 0.5,
+              //       child: DecoratedBox(
+              //         decoration: BoxDecoration(
+              //           color: Colors.pink,
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
 
               // Hero box
               Positioned(
@@ -568,7 +660,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   width: 600,
                   height: 300,
                   child: Opacity(
-                    opacity: 0.5,
+                    opacity: 1.0,
                     child: DecoratedBox(
                         decoration: const BoxDecoration(
                           color: Colors.transparent,

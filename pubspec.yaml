@@ -59,6 +59,9 @@ dev_dependencies:
 flutter:
   assets:
     - assets/BallOnFloor.jpg
+    - assets/PlayBlock1.jpg
+    - assets/PlayBlock2.jpg
+    - assets/PlayDump.jpg
     - assets/PlayServe1.png
     - assets/StatsBlocks.png
     - assets/StatsDigs.png
