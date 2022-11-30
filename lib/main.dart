@@ -100,11 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Height: 5 \'8"',
+                'Height: 5 \'9"',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
-                'Weight: 130lb',
+                'Weight: 138lb',
                 style: kLabelTextStyleSystem30,
               ),
               Text(
